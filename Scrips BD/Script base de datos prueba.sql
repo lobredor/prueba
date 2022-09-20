@@ -6,7 +6,7 @@ CREATE DATABASE prueba
 
 CREATE TABLE estudiantes(
     id serial primary key,
-    identificacion varchar(30) not null,
+    identificacion varchar(30) not null unique,
     nombre varchar(30) not null,
     apellido varchar(30) not null,
     edad int not null,

@@ -48,19 +48,19 @@ export class AppComponent implements OnInit {
               Swal.fire({
                 icon: 'success',
                 title: 'OK',
-                text: 'Guardado Correctamente!!',
+                text: 'Guardado Correctamente!',
                 allowOutsideClick: false
               });
               this.obtenerEstudiantes()
+              this.form.reset();
             }, 1000);
           } else {
             Swal.fire({
               icon: 'error',
               title: 'Upsss..',
-              text: 'Ha ocurrido un error intenta mas tarde!!',
+              text: 'Ha ocurrido un error, identificación duplicada!',
               allowOutsideClick: false
             });
-            this.form.reset();
           }
         }, error => {
           console.error(error);
@@ -73,7 +73,6 @@ export class AppComponent implements OnInit {
           this.form.reset();
         });
       }
-      this.form.reset();
     } catch (error) {
       console.error(error);
     }
